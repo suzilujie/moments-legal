@@ -1,0 +1,212 @@
+/* 时刻 Moments —— 法务与支持页共用样式
+ *
+ * 设计取舍（2026-10-19）：
+ *   项目内部的 HTML 文档统一用 slate 灰阶暗色。这两个法务页**刻意例外**用浅色，
+ *   因为它们面向 App Store 审核员与外部用户：浅色更符合阅读、打印与截图留证习惯。
+ *   右侧固定 TOC + 锚点跳转仍按项目约定保留，只是配色不同。
+ *
+ * 只用系统字体与纯 CSS，不引任何外部资源：Pages 上零依赖，离线也能看。
+ */
+
+:root {
+  --bg: #ffffff;
+  --panel: #f8fafc;
+  --fg: #1f2937;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --accent: #1d4ed8;
+  --warn: #b45309;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.85 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 56px 24px 96px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 208px;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ── 正文 ───────────────────────────────────────────────── */
+
+article { min-width: 0; }
+
+h1 {
+  font-size: 30px;
+  line-height: 1.35;
+  margin: 0 0 8px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--accent);
+  letter-spacing: -0.01em;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0 0 32px;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 44px 0 12px;
+  padding-left: 12px;
+  border-left: 4px solid var(--accent);
+  line-height: 1.4;
+}
+
+h3 {
+  font-size: 17px;
+  margin: 26px 0 8px;
+  padding-left: 10px;
+  border-left: 3px solid var(--line);
+}
+
+p, li { color: var(--fg); }
+
+ul, ol { padding-left: 22px; }
+
+li { margin: 6px 0; }
+
+strong { color: #0f172a; }
+
+a { color: var(--accent); text-decoration: none; }
+
+a:hover { text-decoration: underline; }
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.92em;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+
+.card {
+  background: var(--panel);
+  border-left: 3px solid var(--accent);
+  padding: 14px 18px;
+  margin: 18px 0;
+  font-size: 15px;
+}
+
+.card.warn { border-left-color: var(--warn); }
+
+.card p:first-child { margin-top: 0; }
+.card p:last-child { margin-bottom: 0; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 15px;
+}
+
+th, td {
+  text-align: left;
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+th { background: var(--panel); font-weight: 600; }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 40px 0;
+}
+
+/* ── 右侧固定目录 ───────────────────────────────────────── */
+
+nav.toc {
+  position: sticky;
+  top: 40px;
+  font-size: 14px;
+  border-left: 1px solid var(--line);
+  padding-left: 16px;
+}
+
+nav.toc .toc-title {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+nav.toc a {
+  display: block;
+  color: var(--muted);
+  padding: 4px 0;
+}
+
+nav.toc a:hover { color: var(--accent); }
+
+/* ── 落地页 ─────────────────────────────────────────────── */
+
+.hero p.lead {
+  font-size: 17px;
+  color: var(--fg);
+}
+
+.links { margin-top: 28px; }
+
+.link-item {
+  display: block;
+  padding: 18px 20px;
+  margin: 12px 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+}
+
+.link-item .t { font-size: 17px; font-weight: 600; color: #0f172a; }
+.link-item .d { font-size: 14px; color: var(--muted); margin-top: 4px; }
+
+/* ── 窄屏 ───────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .wrap {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 36px 20px 72px;
+  }
+  nav.toc {
+    position: static;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding: 14px 0 0;
+    order: -1;
+  }
+  nav.toc a { display: inline-block; margin-right: 14px; }
+}
+
+/* ── 打印 ───────────────────────────────────────────────── */
+
+@media print {
+  nav.toc { display: none; }
+  .wrap { display: block; max-width: none; padding: 0; }
+  body { font-size: 12pt; }
+  a { color: #000; text-decoration: none; }
+  h1 { border-bottom: 1px solid #000; }
+  h2 { border-left: 3px solid #000; }
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}

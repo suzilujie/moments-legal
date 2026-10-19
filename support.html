@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>支持与常见问题 · 时刻 Moments</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <article>
+    <h1>支持与常见问题</h1>
+    <p class="meta">时刻 Moments（iOS）　·　更新日期：2026-10-19</p>
+
+    <div class="card">
+      <p>遇到问题请先看下面的常见问题；若仍未解决，请发邮件至
+        <a href="mailto:36055625@qq.com">36055625@qq.com</a>，
+        并附上<b>机型、iOS 版本、问题发生时间</b>，以及 App 内“自检 → 日志”导出的日志文件。</p>
+    </div>
+
+    <h2 id="record">1. 录音与转写</h2>
+
+    <h3>点了开始录音，却没有文字</h3>
+    <ul>
+      <li>确认已在系统设置中允许本 App 使用麦克风：设置 → 时刻 → 麦克风。</li>
+      <li>确认识别模型已下载完成（设置页会显示模型占用）。未下载时无法转写。</li>
+      <li>识别按语音停顿切分，通常每 8~10 秒出一批文字；刚开口时短暂空白属正常。</li>
+    </ul>
+
+    <h3>识别结果不准确</h3>
+    <ul>
+      <li>本 App 使用本地离线模型，准确率受口音、语速与背景噪声影响。</li>
+      <li>尽量靠近说话人，避免多人同时说话；嘈杂环境建议开启降噪。</li>
+      <li>可在设置中切换识别语言（中文 / 英文 / 粤语 / 日文 / 韩文）。选错语言会显著降低准确率。</li>
+      <li>标点由模型输出决定，部分语言或场景标点较少属正常现象。</li>
+    </ul>
+
+    <h3>锁屏或切到其他 App 后录音停止</h3>
+    <ul>
+      <li>本 App 已声明后台音频权限，正常情况下锁屏会继续录音。</li>
+      <li>若被来电、其他音频 App 或系统资源回收中断，录音会保存已录制的部分。</li>
+      <li>低电量模式下系统可能限制后台运行，建议录音时保持充电或关闭低电量模式。</li>
+    </ul>
+
+    <h2 id="model">2. 模型下载</h2>
+
+    <h3>需要下载多大的文件</h3>
+    <table>
+      <thead><tr><th>模型</th><th>体积</th><th>是否必需</th></tr></thead>
+      <tbody>
+        <tr><td>语音识别模型</td><td>约 239 MB</td><td>必需（不下载无法转写）</td></tr>
+        <tr><td>文字纠错模型</td><td>约 397 MB</td><td>可选（提升标点与错字表现）</td></tr>
+      </tbody>
+    </table>
+    <p>模型只在首次使用时下载一次，之后完全离线运行。建议在 Wi-Fi 环境下下载。</p>
+
+    <h3>下载失败或卡住</h3>
+    <ul>
+      <li>检查网络连接，切换到其他网络后重试。</li>
+      <li>下载源为 Hugging Face（失败时自动尝试镜像），部分地区可能访问受限。</li>
+      <li>确认设备剩余存储空间足够（建议至少留出 1 GB）。</li>
+      <li>仍失败时，请发邮件并附上日志文件。</li>
+    </ul>
+
+    <h2 id="subscription">3. 订阅与购买</h2>
+
+    <h3>如何恢复已购买的订阅</h3>
+    <p>在设置页点击“恢复购买”，使用购买时相同的 Apple ID 登录即可。订阅与 Apple ID 绑定，不随设备变化。</p>
+
+    <h3>如何取消订阅</h3>
+    <p>iOS 设置 → 你的 Apple ID → 订阅 → 时刻 → 取消订阅。<b>仅卸载 App 不会取消订阅。</b></p>
+
+    <h3>如何申请退款</h3>
+    <p>支付与退款由 Apple 处理，请访问
+      <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>。</p>
+
+    <h3>订阅到期后我的录音和文字会消失吗</h3>
+    <p>不会。已产生的录音、文字稿与译文始终保留在设备上，可继续查看与导出；订阅只影响新增的高级功能。</p>
+
+    <h2 id="data">4. 数据与隐私</h2>
+
+    <h3>录音和文字存在哪里</h3>
+    <p>全部保存在本机 App 沙盒内，不上传服务器。详见
+      <a href="privacy.html">隐私政策</a>。</p>
+
+    <h3>音频会一直保留吗</h3>
+    <p>默认保留 7 天，可在设置中调整；文字稿长期保留，直到你删除对应录音。</p>
+
+    <h3>如何彻底删除数据</h3>
+    <p>删除单条录音可在历史列表中左滑删除；彻底清除请卸载 App，系统会删除沙盒内全部数据。</p>
+
+    <h3>换手机会丢失录音吗</h3>
+    <p>会。本 App 不提供云端同步。换机前请在详情页导出需要保留的文字内容；音频本身不会随 iCloud 备份之外的途径迁移。</p>
+
+    <h2 id="contact">5. 联系与反馈</h2>
+    <p>
+      邮件：<a href="mailto:36055625@qq.com">36055625@qq.com</a><br>
+      请在邮件中包含：机型（如 iPhone 15）、iOS 版本、App 版本（设置页底部可见）、问题描述与日志文件。
+    </p>
+    <p class="meta">通常在 3 个工作日内回复。</p>
+  </article>
+
+  <nav class="toc">
+    <div class="toc-title">目录</div>
+    <a href="#record">1 录音与转写</a>
+    <a href="#model">2 模型下载</a>
+    <a href="#subscription">3 订阅与购买</a>
+    <a href="#data">4 数据与隐私</a>
+    <a href="#contact">5 联系与反馈</a>
+  </nav>
+</div>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隐私政策 · 时刻 Moments</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <article>
+    <h1>隐私政策</h1>
+    <p class="meta">适用 App：时刻 Moments（iOS）　·　生效日期：2026-10-19</p>
+
+    <h2 id="overview">1. 概述</h2>
+    <p>
+      时刻（以下简称“本 App”）是一款在设备本地完成录音、语音识别、翻译与检索的工具。
+      本政策说明本 App 处理哪些信息、这些信息存放在哪里、保留多久，以及本 App 会在什么情况下访问网络。
+    </p>
+    <div class="card">
+      <p><b>一句话结论</b>：我们不运营服务器，不收集你的录音与文字，也没有账号体系。
+        你产生的所有内容都保存在你的 iPhone 上，只有你自己能访问。</p>
+    </div>
+
+    <h2 id="no-collect">2. 我们不收集的信息</h2>
+    <ul>
+      <li>不要求注册账号，不收集姓名、手机号、邮箱等身份信息。</li>
+      <li>不接入任何第三方分析（analytics）、广告（advertising）或崩溃上报（crash reporting）SDK。</li>
+      <li>不进行用户画像（profiling）、不做跨 App 追踪（tracking），因此不会请求“允许 App 请求跟踪”权限。</li>
+      <li>不上传录音、文字稿、译文、检索记录到任何服务器，我们也没有可以接收这些数据的服务器。</li>
+    </ul>
+
+    <h2 id="local-data">3. 在设备上处理与保存的信息</h2>
+    <table>
+      <thead>
+        <tr><th>数据</th><th>用途</th><th>存放位置</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>录音音频</td>
+          <td>实时转写与回听</td>
+          <td>App 沙盒内的音频目录</td>
+        </tr>
+        <tr>
+          <td>文字稿与时间戳</td>
+          <td>字幕、历史记录、全文检索</td>
+          <td>App 沙盒内的本地数据库</td>
+        </tr>
+        <tr>
+          <td>译文</td>
+          <td>双语对照显示</td>
+          <td>App 沙盒内的本地数据库</td>
+        </tr>
+        <tr>
+          <td>设置项</td>
+          <td>记住你的偏好（语言、码率、保留期等）</td>
+          <td>系统 UserDefaults</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>以上数据均受 iOS 沙盒保护。其他 App 无法读取，我们同样无法访问。</p>
+
+    <h2 id="retention">4. 保留期限</h2>
+    <ul>
+      <li><b>音频</b>：默认保留 <b>7 天</b>，可在设置中调整或更短；到期自动清理。</li>
+      <li><b>文字稿与译文</b>：长期保留，直到你在 App 内删除对应录音或卸载 App。</li>
+      <li><b>卸载 App</b>：系统会一并删除沙盒内的全部数据，包括音频、文字稿、译文与设置。</li>
+    </ul>
+
+    <h2 id="network">5. 本 App 的网络请求</h2>
+    <p>
+      本 App 只在<b>下载离线识别模型</b>时访问网络，此外不发起任何网络请求。
+    </p>
+    <table>
+      <thead>
+        <tr><th>项目</th><th>说明</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>访问的域名</td>
+          <td><code>huggingface.co</code>；若连接失败会尝试镜像 <code>hf-mirror.com</code></td>
+        </tr>
+        <tr>
+          <td>下载内容</td>
+          <td>语音识别模型（约 239 MB）与可选的文字纠错模型（约 397 MB）</td>
+        </tr>
+        <tr>
+          <td>会暴露的信息</td>
+          <td>与访问任何网站相同，第三方会看到你的 <b>IP 地址</b>与下载的文件名</td>
+        </tr>
+        <tr>
+          <td>不会发送的信息</td>
+          <td><b>不上传任何录音、文字、译文或使用记录</b></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      模型文件下载完成后保存在 App 沙盒内，此后的识别与纠错全部离线完成。
+      第三方域名由 Hugging Face 运营，其数据处理遵循该方的隐私政策。
+    </p>
+
+    <h2 id="system">6. 系统服务与订阅</h2>
+    <h3>系统翻译</h3>
+    <p>
+      翻译通过 Apple 的 Translation 框架完成，翻译过程在设备上运行，语言包由 iOS 管理并遵循 Apple 的隐私政策。
+      本 App 不把待翻译文本发送给我们或任何第三方。
+    </p>
+    <h3>订阅与支付</h3>
+    <p>
+      订阅由 Apple 的 App 内购买（In-App Purchase）系统处理。支付信息（银行卡、账单地址等）由 Apple 收集与保存，
+      <b>我们不接触、也无法获取</b>。我们只能看到 Apple 提供的汇总销售数据，其中不含任何用户身份信息。
+      订阅状态由 App 向系统查询，不在我们的服务器上存储。
+    </p>
+
+    <h2 id="permissions">7. 系统权限</h2>
+    <table>
+      <thead>
+        <tr><th>权限</th><th>用途</th><th>可否拒绝</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>麦克风</td>
+          <td>录制需要转写的声音</td>
+          <td>可拒绝，拒绝后无法录音，其余功能仍可浏览历史</td>
+        </tr>
+        <tr>
+          <td>后台音频</td>
+          <td>锁屏或切到其他 App 时继续录音</td>
+          <td>由系统管理，随录音会话启用</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>本 App 不申请通讯录、照片、定位、通讯记录等与功能无关的权限。</p>
+
+    <h2 id="children">8. 儿童隐私</h2>
+    <p>
+      本 App 不面向 13 岁以下儿童，也不会有意收集儿童的个人信息。
+      由于本 App 不收集任何个人信息，监护人无需担心数据外泄。
+    </p>
+
+    <h2 id="rights">9. 你的控制权</h2>
+    <ul>
+      <li><b>删除单条记录</b>：在历史列表中左滑删除，音频与文字稿一并清除。</li>
+      <li><b>缩短保留期</b>：在设置中把音频保留天数调小，超期音频自动清理。</li>
+      <li><b>彻底清除</b>：卸载本 App，系统会删除沙盒内的全部数据。</li>
+      <li><b>关闭录音</b>：随时停止录音，或在系统设置中撤销麦克风权限。</li>
+    </ul>
+
+    <h2 id="changes">10. 政策变更</h2>
+    <p>
+      若本政策发生重大变更（例如新增需要联网的功能），我们会在本页面更新生效日期，
+      并在 App 内以显著方式提示。继续使用即表示你接受更新后的政策。
+    </p>
+
+    <h2 id="contact">11. 联系方式</h2>
+    <p>
+      对本政策有任何疑问，或希望行使上述控制权，请联系：
+      <a href="mailto:36055625@qq.com">36055625@qq.com</a>
+    </p>
+
+    <hr>
+
+    <h2 id="english">English Summary</h2>
+    <p>
+      Moments is an on-device recording, transcription and translation app for iOS.
+      We do not operate a server and do not collect your audio, transcripts or translations.
+      All content stays in the app sandbox on your device.
+    </p>
+    <p>
+      The only network request the app makes is downloading offline speech models from
+      <code>huggingface.co</code> (falling back to <code>hf-mirror.com</code>).
+      That request exposes your IP address to the host, and <b>never</b> includes your recordings or text.
+      Subscriptions are handled entirely by Apple's In-App Purchase system; we never receive your payment details.
+    </p>
+    <p>
+      There is no account system, no analytics SDK, no advertising SDK and no crash-reporting service.
+      Uninstalling the app removes all locally stored data. Questions:
+      <a href="mailto:36055625@qq.com">36055625@qq.com</a>.
+    </p>
+  </article>
+
+  <nav class="toc">
+    <div class="toc-title">目录</div>
+    <a href="#overview">1 概述</a>
+    <a href="#no-collect">2 不收集的信息</a>
+    <a href="#local-data">3 设备上的数据</a>
+    <a href="#retention">4 保留期限</a>
+    <a href="#network">5 网络请求</a>
+    <a href="#system">6 系统服务与订阅</a>
+    <a href="#permissions">7 系统权限</a>
+    <a href="#children">8 儿童隐私</a>
+    <a href="#rights">9 你的控制权</a>
+    <a href="#changes">10 政策变更</a>
+    <a href="#contact">11 联系方式</a>
+    <a href="#english">English Summary</a>
+  </nav>
+</div>
+</body>
+</html>
